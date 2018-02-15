@@ -218,10 +218,10 @@ body, html {
           flex-direction: column;
         }
 
-        #movie-list {
+        .movie-list {
           flex-basis: 75%;
         }
-        #movie-filter {
+        .movie-filter {
           flex-basis: 25%;
 
           @media screen and (max-width: $break-small) {
@@ -231,7 +231,7 @@ body, html {
       }
     }
 
-    #movie-list {
+    .movie-list {
       padding-top: 2rem;
 
       .movie {
