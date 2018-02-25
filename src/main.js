@@ -12,7 +12,7 @@ moment.tz.setDefault("UTC");
 Object.defineProperty(Vue.prototype, '$moment', { get() { return this.$root.moment } });
 
 //event bus
-import { checkFilterHandler } from "./util/bus";
+import {checkFilterHandler } from "./util/bus";
 const bus = new Vue();
 Object.defineProperty(Vue.prototype, '$bus', { get() { return this.$root.bus } });
 
@@ -34,6 +34,7 @@ new Vue({
         this.$http.get('/api').then(res => {
             this.movies = res.data;
         });
-        this.$bus.$on('check-filter-event', checkFilterHandler.bind(this))
+        this.$bus.$on('check-filter-event', checkFilterHandler.bind(this));
+        this.$bus.$on('set-day-event', (day) => { this.day = day });
     }
 });
